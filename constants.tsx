@@ -1,0 +1,87 @@
+
+import { Team, Technician, TeamComposition } from './types';
+
+export const INITIAL_TEAMS: Team[] = [
+  ...Array.from({ length: 20 }, (_, i) => ({
+    id: `e${i + 1}`,
+    name: `Equipe ${i + 1}`,
+    city: 'Operacional',
+    requiredTechnicians: 2,
+    type: 'Equipe' as const
+  })),
+  ...Array.from({ length: 9 }, (_, i) => ({
+    id: `s${i + 1}`,
+    name: `Suporte ${i + 1}`,
+    city: 'Apoio',
+    requiredTechnicians: 2,
+    type: 'Suporte' as const
+  }))
+];
+
+export const INITIAL_TECHNICIANS: Technician[] = [
+  { id: 't1', name: 'Diego N.', active: true, role: 'Instalador' },
+  { id: 't2', name: 'Davi K.', active: true, role: 'Instalador' },
+  { id: 't3', name: 'Patrick', active: true, role: 'Instalador' },
+  { id: 't4', name: 'Ernesto', active: true, role: 'Instalador' },
+  { id: 't5', name: 'Itamar', active: true, role: 'Instalador' },
+  { id: 't6', name: 'Cleiton Araujo', active: true, role: 'Instalador' },
+  { id: 't7', name: 'Fellipe Silva', active: true, role: 'Instalador' },
+  { id: 't8', name: 'Madson', active: true, role: 'Instalador' },
+  { id: 't9', name: 'João S.', active: true, role: 'Instalador' },
+  { id: 't10', name: 'Kevin', active: true, role: 'Instalador' },
+  { id: 't11', name: 'Marcelo P.', active: true, role: 'Instalador' },
+  { id: 't12', name: 'Adrian', active: true, role: 'Instalador' },
+  { id: 't13', name: 'Alex S', active: true, role: 'Instalador' },
+  { id: 't14', name: 'Luiza Dapper', active: true, role: 'Instalador' },
+  { id: 't15', name: 'Diego Machado', active: true, role: 'Instalador' },
+  { id: 't16', name: 'Tiago S.', active: true, role: 'Instalador' },
+  { id: 't17', name: 'Cristian K.', active: true, role: 'Instalador' },
+  { id: 't18', name: 'Lucas R.', active: true, role: 'Instalador' },
+  { id: 't19', name: 'Marciano P', active: true, role: 'Instalador' },
+  { id: 't20', name: 'Wendel B', active: true, role: 'Instalador' },
+  { id: 't21', name: 'Vinicius', active: true, role: 'Instalador' },
+  { id: 't22', name: 'Wesley P.', active: true, role: 'Instalador' },
+  { id: 't23', name: 'Guilherme S.', active: true, role: 'Instalador' },
+  { id: 't24', name: 'Obel', active: true, role: 'Instalador' },
+  { id: 't25', name: 'Fabricio', active: true, role: 'Instalador' },
+  { id: 't26', name: 'Diego da Costa', active: true, role: 'Instalador' },
+  { id: 't27', name: 'Daniel', active: true, role: 'Instalador' },
+  { id: 't28', name: 'Dalvan', active: true, role: 'Instalador' },
+  { id: 't29', name: 'Iago Rodrigues', active: true, role: 'Instalador' },
+  { id: 't30', name: 'Arthur Vier', active: true, role: 'Instalador' },
+  { id: 't31', name: 'Alisson R.', active: true, role: 'Instalador' },
+  { id: 't32', name: 'Roberto', active: true, role: 'Instalador' },
+  { id: 't33', name: 'Luiz Fernando', active: true, role: 'Instalador' },
+  { id: 't34', name: 'Axel', active: true, role: 'Instalador' },
+  { id: 't35', name: 'Felipe Liz', active: true, role: 'Instalador' },
+  { id: 't36', name: 'Cesar Z.', active: true, role: 'Instalador' },
+  { id: 't37', name: 'João T.', active: true, role: 'Instalador' },
+  { id: 't38', name: 'Mateus Elias', active: true, role: 'Instalador' },
+  { id: 't39', name: 'Isaque B.', active: true, role: 'Instalador' },
+  { id: 'st1', name: 'Henrique N.', active: true, role: 'Suporte' },
+  { id: 'st2', name: 'Robson Nunes', active: true, role: 'Suporte' },
+  { id: 'st3', name: 'Guilherme R.', active: true, role: 'Suporte' },
+  { id: 'st4', name: 'Cristian Konradt', active: true, role: 'Suporte' },
+  { id: 'st5', name: 'Aureo', active: true, role: 'Suporte' },
+  { id: 'st6', name: 'Augusto', active: true, role: 'Suporte' },
+  { id: 'st7', name: 'Leonardo Kleemann', active: true, role: 'Suporte' },
+  { id: 'st8', name: 'Deivid K', active: true, role: 'Suporte' },
+  { id: 'st9', name: 'Derek', active: true, role: 'Suporte' },
+  { id: 'st10', name: 'Felipe Schons', active: true, role: 'Suporte' },
+  { id: 'st11', name: 'OFF', active: true, role: 'Suporte' },
+];
+
+export const DEFAULT_COMPOSITIONS: TeamComposition[] = [
+  { teamId: 'e1', year: 2025, month: 1, technicianIds: ['t1', 't2'] },
+  { teamId: 'e2', year: 2025, month: 1, technicianIds: ['t3', 't4'] },
+  { teamId: 'e3', year: 2025, month: 1, technicianIds: ['t5', 't6'] },
+  { teamId: 'e4', year: 2025, month: 1, technicianIds: ['t7', 't8'] },
+  { teamId: 'e5', year: 2025, month: 1, technicianIds: ['t9', 't10'] },
+  { teamId: 'e6', year: 2025, month: 1, technicianIds: ['t11', 't12'] },
+  { teamId: 'e7', year: 2025, month: 1, technicianIds: ['t13', 't14'] },
+  { teamId: 'e8', year: 2025, month: 1, technicianIds: ['t15', 't16'] },
+  { teamId: 'e9', year: 2025, month: 1, technicianIds: ['t17', 't18'] },
+  { teamId: 'e10', year: 2025, month: 1, technicianIds: ['t19', 't20'] },
+  { teamId: 's1', year: 2025, month: 1, technicianIds: ['st1', ''] },
+  { teamId: 's2', year: 2025, month: 1, technicianIds: ['st2', 'st3'] },
+];
